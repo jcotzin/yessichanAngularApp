@@ -1,0 +1,23 @@
+<div class="title-block">
+  <h3>Anime</h3>
+</div>
+
+<div class="container" ng-repeat=" anime in animeApi">
+  <div class="animes">
+      <ul ng-repeat="a in anime | filter:{attributes: userSearch}" ng-if="a.attributes.coverImage.original" class="anime-list">
+        <a href="#"><li><img ng-src="{{ a.attributes.coverImage.original}}"></img></li>
+          <!-- <h1><li>{{a.id}}</li></h1> -->
+        <li><h3>{{ a.attributes.titles.en }}</h3></li>
+        <li><h4>{{ a.attributes.titles.ja_jp}}</li></h4></a>
+        <li>{{ string(a.attributes.synopsis) }}...</li>
+      </ul>
+    </div>
+</div>
+ <!-- | orderBy: 'attributes.titles.en' -->
+ <div class="page-links">
+   <a href="#">1</a>
+   <a href="#">2</a>
+   <a href="#">3</a>
+   <a href="#">4</a>
+   <a href="#">5</a>
+ </div>
